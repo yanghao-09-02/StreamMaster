@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<!--*************************************************-->
+<!--NVidiaAccount: 139, Qn05171258-->
+<!--***BEGIN of VPC [System] Configuration***-->
+<!--*************************************************-->
+<Config>
+	
+<!--***BEGIN of VPC General Configuration***-->
+	<General>
+		<lowestVpcVer>2.0.0.0</lowestVpcVer>
+		
+		<BindInterface>"Intel(R) I211 Gigabit Network Connection"</BindInterface>
+		<BindMAC>"30:0E:D5:59:A7:11"</BindMAC>		
+		<GlobalVpcId>1201</GlobalVpcId>
+		<LCServer>"192.168.10.155"</LCServer>
+		<FreeVersion>592</FreeVersion>
+		
+		<EfficiencyCtrl>
+			<MTRTD>800</MTRTD>
+			<MTIFD>300</MTIFD>
+			
+			<RealtimeCtrl>on</RealtimeCtrl>
+			<SIF>on</SIF>
+			<AVSyn>on</AVSyn>
+			
+			<RTL_Level0>150</RTL_Level0> 
+			<RTL_Level1>500</RTL_Level1>
+			<RTL_Level2>1000</RTL_Level2>
+			<RTL_Level3>3000</RTL_Level3>
+			
+			<AVSynLimit>150</AVSynLimit>
+		</EfficiencyCtrl>	
+		
+		<LocalTimeSvr>"127.0.0.1"</LocalTimeSvr>
+		<TimeSynCycle>30</TimeSynCycle>
+		
+		<PeopleDetect>on</PeopleDetect>
+		<FaceID>off</FaceID>
+		
+		<ServiceName>"VPCService"</ServiceName>
+		
+		<ShowDebugInfo>on</ShowDebugInfo>
+		<ShowProgress>on</ShowProgress>
+		<ShowRcmInfo>on</ShowRcmInfo>
+		
+		<DebugLevel>5</DebugLevel>
+		<DebuglogLife>10</DebuglogLife>
+		<DebuglogSizeLimit>4096</DebuglogSizeLimit>
+		
+<!-- 		<DependedService>"EasyDarwin"</DependedService>
+		<TimeWaitingDpdc>30000</TimeWaitingDpdc> -->
+		
+		<KeyStrmWaitTime>0</KeyStrmWaitTime>	
+		
+		<!-- <GPUSetting>
+			<GPUNumber>2</GPUNumber>
+			<GPU id="01">
+				<GpuType>Adapter</GpuType>
+				<VendorId>0x10DE</VendorId>
+				<manufacturer>NVIDIA</manufacturer>
+				<DeviceName>"NVIDIA GeForce RTX 3060"</DeviceName>
+				<PCIBUSID>2</PCIBUSID>
+				<PCIDEVICEID>0</PCIDEVICEID>
+				<GPULUID>NVIDIA GeForce RTX 3060</GPULUID>
+				<Exclusive>true</Exclusive>
+			</GPU>
+			
+			<GPU id="02">
+				<GpuType>InCore</GpuType>
+				<VendorId>8086</VendorId>
+				<manufacturer>Intel</manufacturer>
+				<DeviceName>"Intel(R) UHD Graphics 630"</DeviceName>
+				<PCIBUSID>0</PCIBUSID>
+				<PCIDEVICEID>2</PCIDEVICEID>
+				<GPULUID>Intel(R) UHD Graphics 630</GPULUID>
+				<Exclusive>false</Exclusive>
+			</GPU>
+		</GPUSetting> -->
+
+	</General>
+<!--***END of General Configuration***-->
+<!--*************************************************-->
+
+<!--***BEGIN of RAVIODevices Difinition***-->
+	<RAVIODevices>
+		<FixedVideoIn>0</FixedVideoIn>
+		<!--Fixed Video Direct Input Device Name-->
+			<FVIDN-1>"HDPro 5"</FVIDN-1>	
+			<FVIDN-2>"HDPro 5"</FVIDN-2>
+			<FVIDN-3>"HDPro 7"</FVIDN-3>
+			<FVIDN-4>"HDPro 8"</FVIDN-4>
+
+		<FixedVideoOut>0</FixedVideoOut>
+			<!--Fixed Video Direct Output Device Name-->
+			<FVODN-1>"NVIDIA GeForce RTX 3060"</FVODN-1>	
+			<FVODN-2>"NVIDIA GeForce RTX 3060"</FVODN-2>
+		<FixedAudioIn>0</FixedAudioIn>
+			<!--Fixed Audio Direct Input Device Name-->
+			<FAIDN-1>"麦克风 (Realtek High Definition Audio)"</FAIDN-1>
+		
+		<FixedAudioOut>0</FixedAudioOut>
+			<!--Fixed Audio Direct Output Device Name-->
+			<FAODN-1>"扬声器 (Realtek High Definition Audio)"</FAODN-1>
+	</RAVIODevices>			
+<!--***END of RAVIODevices Difinition***-->
+<!--*************************************************-->
+
+<!--***BEGIN of APC-SUB Configuration***-->
+	<ApcConfig>
+	
+		<APCSetting>
+			<APCInLocal>false</APCInLocal>
+			<APCPath>"G:\iAPC\APCService_win"</APCPath>
+			<APCMainPE>"APCService.exe"</APCMainPE>
+			<APCConfigFile>"APC_Config.xml"</APCConfigFile>
+			<APC_RCPort_Item>"/config/APCGeneral/CtrlPort"</APC_RCPort_Item>
+		</APCSetting>
+		
+		<APCSimulator>
+			<!--Below is new items for control ffmpeg audio pushing-->
+			<UseFpgAudio>false</UseFpgAudio>
+			<FpgMainPath>"C:\ffmpeg\bin"</FpgMainPath>
+			<AudioPushCmd>"ffmpeg -f dshow -i audio=[AudioAdapter] -acodec aac -ar [SampleRate] -rtsp_transport tcp -f rtsp [DestPath] -y [FileName]"</AudioPushCmd>
+			<AudioAdapter>"线路输入 (2- Realtek High Definition Audio)"</AudioAdapter>
+			<SampleRate>44100</SampleRate>
+			<BitWidth>16</BitWidth>
+			<Channel>2</Channel>
+			<AEBitRate>128</AEBitRate> <!--units:kbps-->			
+			<DestURL>"rtsp://127.0.0.1:554/live/Whole_Mixing_Audio"</DestURL>
+			<ARecordPath>"D:\Audio"</ARecordPath>
+			<ARecordPrefix>"庭审录音"</ARecordPrefix>
+		</APCSimulator>
+	</ApcConfig>
+	
+<!--***END of APC-SUB Configuration***-->
+<!--*************************************************-->
+
+</Config>
+<!--*************************************************-->
+<!--***END of VPC [System] Configuration***-->
+<!--*************************************************-->

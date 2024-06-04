@@ -1,0 +1,319 @@
+<?xml version="1.0"?>
+<!--*************************************************-->
+<!--NVidiaAccount: 139, Qn05171258-->
+<!--***BEGIN of VPC [Worker/Streams] Configuration***-->
+<!--*************************************************-->
+<Config>
+	
+<!--***BEGIN of VPC General Configuration***-->
+	<General>
+		<lowestVpcVer>2.0.0.0</lowestVpcVer>	
+
+		<Location>"Stream Master 流影大师V2.0"</Location>
+		<CustomerName>"高盛信息科技有限公司"</CustomerName>
+		
+		<DefaultBGC>Blue</DefaultBGC>
+		<ErrMsgColor>Red</ErrMsgColor>
+		<InfoMsgColor>Yellow</InfoMsgColor>
+		<MsgHeight>64</MsgHeight>	
+		
+		<StandByMsg>"-南京高盛信息科技有限公司研发部-"</StandByMsg>
+	
+		
+		<LiveBCWriter>"Muxed_Live_AVS_4K_LMS"</LiveBCWriter>
+		<PreviewWriter>"Muxed_Live_AVS_1080P_HLMS"</PreviewWriter>
+		<RecordWriter>"Muxed_Record_AVS"</RecordWriter>	
+
+	</General>
+<!--***END of General Configuration***-->
+<!--*************************************************-->
+
+
+<!--***BEGIN of Media Sources Difinition***-->
+	<MediaSources>
+		<MSCount>4</MSCount> 
+		
+		<MsIPCam1 id = "01">
+			<DisplayName>"网络摄像机—1"</DisplayName>
+			<MSTYPE>RTSP</MSTYPE>
+			<MSFullPath>"rtsp://192.168.10.163:554/live/av0"</MSFullPath>
+			
+			<Authorization>false</Authorization>	<!--***no Authorization***-->
+			<AuthUN>guest</AuthUN>
+			<AuthPwd>"default"</AuthPwd>
+		
+			<UseUTC>false</UseUTC>
+			<UseNTP>false</UseNTP>
+			
+			<STRMCOUNT>1</STRMCOUNT>
+			<Stream id="1">
+				<avStrmId>0</avStrmId>
+				<StrmAlias>"IPCam1Video"</StrmAlias>
+				<StrmType>Video</StrmType>
+				
+				<PiADTC>true</PiADTC>
+				<EstmtDly>300</EstmtDly>	
+				<ProactiveCache>200</ProactiveCache>
+				<CrucailStream>true</CrucailStream>
+				<FrameWidth>1920</FrameWidth>
+				<FrameHeight>1080</FrameHeight>				
+				<FrameRate>30</FrameRate>
+				<DirectOutput>false</DirectOutput>
+			</Stream>
+		</MsIPCam1>
+		
+		<MsIPCam2 id = "02">
+			<DisplayName>"网络摄像机-2"</DisplayName>
+			<MSTYPE>RTSP</MSTYPE>
+			<MSFullPath>"rtsp://192.168.10.163:554/live/av0"</MSFullPath>
+			
+			<Authorization>false</Authorization>	<!--***no Authorization***-->
+			<AuthUN>guest</AuthUN>
+			<AuthPwd>"default"</AuthPwd>
+		
+			<UseUTC>false</UseUTC>
+			<UseNTP>false</UseNTP>
+			
+			<STRMCOUNT>1</STRMCOUNT>
+			<Stream id="1">
+				<avStrmId>0</avStrmId>
+				<StrmAlias>"IPCam2Video"</StrmAlias>
+				<StrmType>Video</StrmType>
+				
+				<PiADTC>true</PiADTC>
+				<EstmtDly>300</EstmtDly>	
+				<ProactiveCache>200</ProactiveCache>
+				<CrucailStream>true</CrucailStream>
+				<FrameWidth>1920</FrameWidth>
+				<FrameHeight>1080</FrameHeight>				
+				<FrameRate>60</FrameRate>
+				<DirectOutput>false</DirectOutput>
+			</Stream>
+		</MsIPCam2>
+		
+		<MsIPCam3 id = "03">
+			<DisplayName>"网络摄像机-3"</DisplayName>
+			<MSTYPE>RTSP</MSTYPE>
+			<MSFullPath>"rtsp://192.168.10.163:554/live/av0"</MSFullPath>
+			
+			<Authorization>false</Authorization>	<!--***no Authorization***-->
+			<AuthUN>guest</AuthUN>
+			<AuthPwd>"default"</AuthPwd>
+		
+			<UseUTC>false</UseUTC>
+			<UseNTP>false</UseNTP>
+			
+			<STRMCOUNT>1</STRMCOUNT>
+			<Stream id="1">
+				<avStrmId>0</avStrmId>
+				<StrmAlias>"IPCam3Video"</StrmAlias>
+				<StrmType>Video</StrmType>
+				
+				<PiADTC>true</PiADTC>
+				<EstmtDly>300</EstmtDly>	
+				<ProactiveCache>200</ProactiveCache>
+				<CrucailStream>true</CrucailStream>
+				<FrameWidth>1920</FrameWidth>
+				<FrameHeight>1080</FrameHeight>				
+				<FrameRate>60</FrameRate>
+				<DirectOutput>false</DirectOutput>
+			</Stream>
+		</MsIPCam3>
+		
+		<MsIPCam4 id = "04">
+			<DisplayName>"网络摄像机-4"</DisplayName>
+			<MSTYPE>RTSP</MSTYPE>
+			<MSFullPath>"rtsp://192.168.10.163:554/live/av0"</MSFullPath>
+			
+			<Authorization>false</Authorization>	<!--***no Authorization***-->
+			<AuthUN>guest</AuthUN>
+			<AuthPwd>"default"</AuthPwd>
+		
+			<UseUTC>false</UseUTC>
+			<UseNTP>false</UseNTP>
+			
+			<STRMCOUNT>1</STRMCOUNT>
+			<Stream id="1">
+				<avStrmId>0</avStrmId>
+				<StrmAlias>"IPCam4Video"</StrmAlias>
+				<StrmType>Video</StrmType>
+				
+				<PiADTC>true</PiADTC>
+				<EstmtDly>300</EstmtDly>	
+				<ProactiveCache>200</ProactiveCache>
+				<CrucailStream>true</CrucailStream>
+				<FrameWidth>1920</FrameWidth>
+				<FrameHeight>1080</FrameHeight>				
+				<FrameRate>60</FrameRate>
+				<DirectOutput>false</DirectOutput>
+			</Stream>
+		</MsIPCam4>
+
+	</MediaSources>
+<!--***END of Media Sources Difinition***-->
+<!--*************************************************-->
+
+<!--***BEGIN of Video Decoders Difinition***-->
+	<VideoDecoders>
+		<VDCDCount>4</VDCDCount> <!--for 4*RTSP VS only-->
+		
+		<VdcdIPCam1Video id="01">
+			<VideoSource>"MediaSources.MsIPCam1.VideoOutput"</VideoSource>
+			<DecoderType>NVGPU</DecoderType>
+		</VdcdIPCam1Video>
+		
+		<VdcdIPCam2Video id="02">
+			<VideoSource>"MediaSources.MsIPCam2.VideoOutput"</VideoSource>
+			<DecoderType>NVGPU</DecoderType>
+		</VdcdIPCam2Video>
+		
+		<VdcdIPCam3Video id="03">
+			<VideoSource>"MediaSources.MsIPCam3.VideoOutput"</VideoSource>
+			<DecoderType>NVGPU</DecoderType>
+		</VdcdIPCam3Video>
+		
+		<VdcdIPCam4Video id="04">
+			<VideoSource>"MediaSources.MsIPCam4.VideoOutput"</VideoSource>
+			<DecoderType>NVGPU</DecoderType>
+		</VdcdIPCam4Video>
+				
+	</VideoDecoders>
+<!--***END of Video Decoders Difinition***-->
+<!--*************************************************-->
+
+<!--***BEGIN of Video Mid Processors Difinition***-->
+	<VideoMidProcessors>
+		<MProcCount>2</MProcCount>
+		
+		<VmpVMatrix id = "01">
+			
+			<MPType>VMtx</MPType>	<!--Raw video matrix-->
+			<RVSInCount>4</RVSInCount>
+			
+			<IRVS id="01">"VideoDecoders.VdcdIPCam1Video.VideoOutput"</IRVS>
+			<IRVS id="02">"VideoDecoders.VdcdIPCam2Video.VideoOutput"</IRVS>			
+			<IRVS id="03">"VideoDecoders.VdcdIPCam3Video.VideoOutput"</IRVS>
+			<IRVS id="04">"VideoDecoders.VdcdIPCam4Video.VideoOutput"</IRVS>
+	
+			<RVOutCount>4</RVOutCount>	<!--Id: From 1 to RVOutCount-->
+			
+			<VODftVI id="01">1</VODftVI>
+			<VODftVI id="02">2</VODftVI>
+			<VODftVI id="03">3</VODftVI>
+			<VODftVI id="04">4</VODftVI>
+			
+		</VmpVMatrix>
+		
+		<VmpVMuxer id="02">
+			<MPType>VMux</MPType>
+			<RVSInCount>4</RVSInCount>
+			<IRVS id="01">"VideoMidProcessors.VmpVMatrix.VideoOutput.ById.01"</IRVS>
+			<IRVS id="02">"VideoMidProcessors.VmpVMatrix.VideoOutput.ById.02"</IRVS>
+			<IRVS id="03">"VideoMidProcessors.VmpVMatrix.VideoOutput.ById.03"</IRVS>
+			<IRVS id="04">"VideoMidProcessors.VmpVMatrix.VideoOutput.ById.04"</IRVS>
+			
+			<IRVSSIFRequired>"1,2,3"</IRVSSIFRequired>
+						
+			<MuxLayout>"4Divide-Equ"</MuxLayout>
+			<RgnVs id="1">1</RgnVs>
+			<RgnVs id="2">2</RgnVs>
+			<RgnVs id="3">3</RgnVs>
+			<RgnVs id="4">4</RgnVs>
+			
+			<ChildWindow id="1">
+				<onLayer>1</onLayer>
+				<posBase>LeftTopCorner</posBase>
+				<xShift>0</xShift>
+				<yShift>0</yShift>
+				<Width>1280</Width>
+				<Height>720</Height>			
+			</ChildWindow>
+			
+			<ChildWindow id="2">
+				<onLayer>1</onLayer>
+				<posBase>RightTopCorner</posBase>
+				<xShift>0</xShift>
+				<yShift>0</yShift>
+				<Width>1280</Width>
+				<Height>720</Height>			
+			</ChildWindow>
+			
+			<ChildWindow id="3">
+				<onLayer>1</onLayer>
+				<posBase>LeftBottomCorner</posBase>
+				<xShift>0</xShift>
+				<yShift>0</yShift>
+				<Width>1280</Width>
+				<Height>720</Height>			
+			</ChildWindow>
+			
+			<ChildWindow id="4">
+				<onLayer>1</onLayer>
+				<posBase>RightBottomCorner</posBase>
+				<xShift>0</xShift>
+				<yShift>0</yShift>
+				<Width>1280</Width>
+				<Height>720</Height>			
+			</ChildWindow>
+		
+			<OutputFramerate>30</OutputFramerate>
+			
+			<RVTP>false</RVTP>
+			<DirectOutput>true</DirectOutput>
+			<OutputDeviceNo>1</OutputDeviceNo>
+			<outputOn>NewWindow</outputOn>
+			<WindowWidth>3840</WindowWidth>
+			<WindowHeight>2160</WindowHeight>
+			
+			<IPGNum>6</IPGNum>
+			<CylinderHeight>24</CylinderHeight>
+			
+		</VmpVMuxer>
+	
+	</VideoMidProcessors>
+<!--***END of Video Mid Processors Difinition***-->
+<!--*************************************************-->
+
+<!--***BEGIN of Video Encoders Difinition***-->
+	<VideoEncoders>
+		<VECDCount>1</VECDCount>
+		
+		<VecdMuxedVideo id = "01">
+			<VideoSource>VideoMidProcessors.VmpVMuxer.VideoOutput</VideoSource>
+			<OutputFramerate>30</OutputFramerate>
+			<BitRate>4000</BitRate>
+			<GopLengh>90</GopLengh>
+			<EncoderType>FFMPG</EncoderType>
+			<HwAcclrt>NVCODEC</HwAcclrt>
+			<VCodec>HEVC</VCodec>
+			<Profile>Main</Profile>
+			<LowLatency>true</LowLatency>
+		</VecdMuxedVideo>	
+		
+	</VideoEncoders>
+<!--***END of Video Encoders Difinition***-->
+<!--*************************************************-->
+
+<!--***BEGIN of Media Writers Difinition***-->
+	<MediaWriters>
+		<MWCount>1</MWCount>
+		
+		<MwMuxedLiveAvs4KLMS id ="1">
+
+			<MWType>RTSP</MWType>	
+			
+			<VideoStreams>"VideoEncoders.VecdMuxedVideo.VideoOutput"</VideoStreams>			
+			<outputURL>"rtsp://127.0.0.1:554/MuxedAVS4K_LMS"</outputURL>	<!--Path on LMS-->
+		
+			<AbortOnStrmErr>true</AbortOnStrmErr>	
+			<PushAtBegin>true</PushAtBegin>
+			
+		</MwMuxedLiveAvs4KLMS>
+
+	</MediaWriters>
+<!--***END of Media Writers Difinition***-->
+<!--*************************************************-->
+</Config>
+<!--*************************************************-->
+<!--***END of VPC [Worker/Streams] Configuration***-->
+<!--*************************************************-->
